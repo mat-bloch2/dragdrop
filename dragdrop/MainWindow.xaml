@@ -1,0 +1,29 @@
+﻿<Window x:Class="dragdrop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dragdrop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown">
+            <ListBoxItem>lista1:1</ListBoxItem>
+            <ListBoxItem>lista1:2</ListBoxItem>
+            <ListBoxItem>lista1:3</ListBoxItem>
+            <ListBoxItem>lista1:4</ListBoxItem>
+        </ListBox>
+        <ListBox Grid.Column="3" AllowDrop="True" Drop="ListBox_Drop">
+            <ListBoxItem>lista2:1</ListBoxItem>
+            <ListBoxItem>lista2:2</ListBoxItem>
+            <ListBoxItem>lista2:3</ListBoxItem>
+            <ListBoxItem>lista2:4</ListBoxItem>
+        </ListBox>
+        <TextBlock Grid.Column="1" x:Name="wyniki"></TextBlock>
+    </Grid>
+</Window>
